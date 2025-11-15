@@ -320,31 +320,32 @@ class _onbordingState extends State<onbording> {
     super.initState();
 
     Timer(
-        const Duration(seconds: 3),
-        () => getData.read("Firstuser") != true
-            ? Get.to(() => BoardingPage())
-            : getData.read("Remember") != true
-                ? Get.to(() => const Loginscreen())
-                : Get.to(() => const BottoBarScreen()));
+      const Duration(seconds: 3),
+      () => getData.read("Firstuser") != true
+          ? Get.to(() => BoardingPage())
+          : getData.read("Remember") != true
+          ? Get.to(() => const Loginscreen())
+          : Get.to(() => const BottoBarScreen()),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: WhiteColor,
-        body: Container(
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage("assets/Splash.png"), fit: BoxFit.fill),
-              gradient: gradient.btnGradient),
-          alignment: Alignment.center,
-          padding: EdgeInsets.only(top: 30),
-          child: Image.asset(
-            "assets/applogo.png",
-            height: 130,
-            width: 100,
+      backgroundColor: WhiteColor,
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/Splash.png"),
+            fit: BoxFit.fill,
           ),
-        ));
+          gradient: gradient.btnGradient,
+        ),
+        alignment: Alignment.center,
+        padding: EdgeInsets.only(top: 70),
+        child: Image.asset("assets/newSplashLogo.png", height: 200, width: 180),
+      ),
+    );
   }
 }
 
@@ -364,13 +365,20 @@ class _BoardingScreenState extends State<BoardingPage> {
 
     _slides = [
       Slide(
-          "assets/Onboarding1.png",
-          "Farm-fresh milk delivered straight to your door",
-          "Our milk subscription store app lets you enjoy the taste of farm-fresh milk without ever leaving your home"),
-      Slide("assets/Onboarding2.png", "Convenient milk delivery made simple!",
-          "With our milk subscription store app, getting fresh, delicious milk delivered to your doorstep has never been easier."),
-      Slide("assets/Onboarding3.png", "Let's do and get things done",
-          "Tired of running to the supermarket every time you run out of milk? Our milk subscription store app is the solution you've been looking for!"),
+        "assets/Onboarding1.png",
+        "Farm-fresh milk delivered straight to your door",
+        "Our milk subscription store app lets you enjoy the taste of farm-fresh milk without ever leaving your home",
+      ),
+      Slide(
+        "assets/Onboarding2.png",
+        "Convenient milk delivery made simple!",
+        "With our milk subscription store app, getting fresh, delicious milk delivered to your doorstep has never been easier.",
+      ),
+      Slide(
+        "assets/Onboarding3.png",
+        "Let's do and get things done",
+        "Tired of running to the supermarket every time you run out of milk? Our milk subscription store app is the solution you've been looking for!",
+      ),
     ];
     _pageController = PageController(initialPage: _currentPage);
     super.initState();
@@ -420,9 +428,7 @@ class _BoardingScreenState extends State<BoardingPage> {
       row.children.add(_buildPageIndicatorItem(i));
       if (i != _slides.length - 1)
         // ignore: curly_braces_in_flow_control_structures
-        row.children.add(const SizedBox(
-          width: 10,
-        ));
+        row.children.add(const SizedBox(width: 10));
     }
     return row;
   }
@@ -432,9 +438,9 @@ class _BoardingScreenState extends State<BoardingPage> {
       width: index == _currentPage ? 12 : 8,
       height: index == _currentPage ? 12 : 8,
       decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color:
-              index == _currentPage ? greenColor : greenColor.withOpacity(0.5)),
+        shape: BoxShape.circle,
+        color: index == _currentPage ? greenColor : greenColor.withOpacity(0.5),
+      ),
     );
   }
 
@@ -448,15 +454,16 @@ class _BoardingScreenState extends State<BoardingPage> {
             _currentPage == 0
                 ? "Farm-fresh milk delivered straight to your door".tr
                 : _currentPage == 1
-                    ? "Convenient milk delivery made simple!".tr
-                    : _currentPage == 2
-                        ? "Let's do and get things done".tr
-                        : "",
+                ? "Convenient milk delivery made simple!".tr
+                : _currentPage == 2
+                ? "Let's do and get things done".tr
+                : "",
             textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 21,
-                fontFamily: "Gilroy Bold",
-                color: BlackColor), //heding Text
+              fontSize: 21,
+              fontFamily: "Gilroy Bold",
+              color: BlackColor,
+            ), //heding Text
           ),
         ),
         SizedBox(height: Get.height * 0.02),
@@ -465,19 +472,20 @@ class _BoardingScreenState extends State<BoardingPage> {
           child: Text(
             _currentPage == 0
                 ? "Our milk subscription store app lets you enjoy the taste of farm-fresh milk without ever leaving your home"
-                    .tr
+                      .tr
                 : _currentPage == 1
-                    ? "With our milk subscription store app, getting fresh, delicious milk delivered to your doorstep has never been easier."
-                        .tr
-                    : _currentPage == 2
-                        ? "Tired of running to the supermarket every time you run out of milk? Our milk subscription store app is the solution you've been looking for!"
-                            .tr
-                        : "",
+                ? "With our milk subscription store app, getting fresh, delicious milk delivered to your doorstep has never been easier."
+                      .tr
+                : _currentPage == 2
+                ? "Tired of running to the supermarket every time you run out of milk? Our milk subscription store app is the solution you've been looking for!"
+                      .tr
+                : "",
             textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 13,
-                color: greycolor,
-                fontFamily: "Gilroy Medium"), //subtext
+              fontSize: 13,
+              color: greycolor,
+              fontFamily: "Gilroy Medium",
+            ), //subtext
           ),
         ),
       ],
@@ -545,9 +553,7 @@ class _BoardingScreenState extends State<BoardingPage> {
               ),
               child: Column(
                 children: <Widget>[
-                  SizedBox(
-                    height: Get.size.height * 0.03,
-                  ),
+                  SizedBox(height: Get.size.height * 0.03),
                   _buildPageIndicator(),
                   sliderText(),
                   Spacer(),
@@ -569,9 +575,10 @@ class _BoardingScreenState extends State<BoardingPage> {
                                 child: Text(
                                   "Get Started",
                                   style: TextStyle(
-                                      fontSize: 16,
-                                      color: WhiteColor,
-                                      fontFamily: "Gilroy Bold"),
+                                    fontSize: 16,
+                                    color: WhiteColor,
+                                    fontFamily: "Gilroy Bold",
+                                  ),
                                 ),
                               ),
                             ),
@@ -582,22 +589,25 @@ class _BoardingScreenState extends State<BoardingPage> {
                           child: GestureDetector(
                             onTap: () {
                               _pageController.nextPage(
-                                  duration: const Duration(microseconds: 300),
-                                  curve: Curves.easeIn);
+                                duration: const Duration(microseconds: 300),
+                                curve: Curves.easeIn,
+                              );
                             },
                             child: Container(
                               decoration: BoxDecoration(
-                                  gradient: gradient.btnGradient,
-                                  borderRadius: BorderRadius.circular(15)),
+                                gradient: gradient.btnGradient,
+                                borderRadius: BorderRadius.circular(15),
+                              ),
                               height: 50,
                               width: double.infinity,
                               child: Center(
                                 child: Text(
                                   "Next",
                                   style: TextStyle(
-                                      fontSize: 16,
-                                      color: WhiteColor,
-                                      fontFamily: "Gilroy Bold"),
+                                    fontSize: 16,
+                                    color: WhiteColor,
+                                    fontFamily: "Gilroy Bold",
+                                  ),
                                 ),
                               ),
                             ),
@@ -606,11 +616,11 @@ class _BoardingScreenState extends State<BoardingPage> {
                   SizedBox(
                     height: Get.height * 0.012, //indicator set screen
                   ),
-                  const SizedBox(height: 20)
+                  const SizedBox(height: 20),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

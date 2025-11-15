@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -10,9 +11,11 @@ class SmsTypeController extends GetxController implements GetxService {
 
   SmsTypeModel? smsTypeModel;
   Future smsTypeApi() async{
-    Map<String,String> userHeader = {"Content-type": "application/json", "Accept": "application/json"};
+    Map<String,String> userHeader = {
+      "Content-type": "application/json", 
+    "Accept": "application/json"};
     var response = await http.get(Uri.parse(Config.path + Config.smsType),headers: userHeader);
-
+    log( (Config.path + Config.smsType).toString() );
     print("++++++++++++++++ ${response.body}");
 
     var data = jsonDecode(response.body);

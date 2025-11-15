@@ -58,9 +58,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(
-                        height: Get.height * 0.15,
-                      ),
+                      SizedBox(height: Get.height * 0.15),
                       Text(
                         "Create Your Account".tr,
                         style: TextStyle(
@@ -70,9 +68,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           letterSpacing: 1.1,
                         ),
                       ),
-                      SizedBox(
-                        height: Get.height * 0.01,
-                      ),
+                      SizedBox(height: Get.height * 0.01),
                       Text(
                         "Setting up an account".tr,
                         style: TextStyle(
@@ -96,7 +92,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       width: Get.size.width * 0.6,
                     ),
                   ),
-                )
+                ),
               ],
             ),
             Positioned(
@@ -133,9 +129,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         //     fontSize: 16,
                         //   ),
                         // ),
-                        SizedBox(
-                          height: Get.height * 0.02,
-                        ),
+                        SizedBox(height: Get.height * 0.02),
                         Padding(
                           padding: const EdgeInsets.only(left: 2),
                           child: Text(
@@ -146,9 +140,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: 6,
-                        ),
+                        SizedBox(height: 6),
                         TextFormField(
                           controller: signUpController.name,
                           cursorColor: BlackColor,
@@ -162,8 +154,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           decoration: InputDecoration(
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
-                              borderSide:
-                                  BorderSide(color: Colors.grey.shade300),
+                              borderSide: BorderSide(
+                                color: Colors.grey.shade300,
+                              ),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
@@ -184,9 +177,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               ),
                             ),
                             labelText: "Full Name".tr,
-                            labelStyle: TextStyle(
-                              color: greytext,
-                            ),
+                            labelStyle: TextStyle(color: greytext),
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
@@ -195,9 +186,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             return null;
                           },
                         ),
-                        SizedBox(
-                          height: 20,
-                        ),
+                        SizedBox(height: 20),
                         Padding(
                           padding: const EdgeInsets.only(left: 2),
                           child: Text(
@@ -208,9 +197,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: 6,
-                        ),
+                        SizedBox(height: 6),
                         TextFormField(
                           controller: signUpController.email,
                           cursorColor: BlackColor,
@@ -224,13 +211,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           decoration: InputDecoration(
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
-                              borderSide:
-                                  BorderSide(color: Colors.grey.shade300),
+                              borderSide: BorderSide(
+                                color: Colors.grey.shade300,
+                              ),
                             ),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
-                              borderSide:
-                                  BorderSide(color: Colors.grey.shade300),
+                              borderSide: BorderSide(
+                                color: Colors.grey.shade300,
+                              ),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
@@ -248,9 +237,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               ),
                             ),
                             labelText: "Email Address".tr,
-                            labelStyle: TextStyle(
-                              color: greytext,
-                            ),
+                            labelStyle: TextStyle(color: greytext),
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
@@ -259,9 +246,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             return null;
                           },
                         ),
-                        SizedBox(
-                          height: 20,
-                        ),
+                        SizedBox(height: 20),
                         Padding(
                           padding: const EdgeInsets.only(left: 2),
                           child: Text(
@@ -272,14 +257,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: 6,
-                        ),
+                        SizedBox(height: 6),
                         IntlPhoneField(
                           keyboardType: TextInputType.number,
                           cursorColor: BlackColor,
                           inputFormatters: [
-                            FilteringTextInputFormatter.digitsOnly
+                            FilteringTextInputFormatter.digitsOnly,
                           ],
                           controller: signUpController.number,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -288,9 +271,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             Icons.arrow_drop_down,
                             color: greytext,
                           ),
-                          dropdownTextStyle: TextStyle(
-                            color: greytext,
-                          ),
+                          dropdownTextStyle: TextStyle(color: greytext),
                           style: TextStyle(
                             fontFamily: 'Gilroy',
                             fontSize: 14,
@@ -307,9 +288,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           decoration: InputDecoration(
                             helperText: null,
                             labelText: "Mobile Number".tr,
-                            labelStyle: TextStyle(
-                              color: greytext,
-                            ),
+                            labelStyle: TextStyle(color: greytext),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
                               borderSide: BorderSide(
@@ -336,9 +315,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             return null;
                           },
                         ),
-                        SizedBox(
-                          height: 20,
-                        ),
+                        SizedBox(height: 20),
                         Padding(
                           padding: const EdgeInsets.only(left: 2),
                           child: Text(
@@ -349,91 +326,87 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: 6,
-                        ),
-                        GetBuilder<SignUpController>(builder: (context) {
-                          return TextFormField(
-                            controller: signUpController.password,
-                            obscureText: signUpController.showPassword,
-                            cursorColor: BlackColor,
-                            autovalidateMode:
-                                AutovalidateMode.onUserInteraction,
-                            style: TextStyle(
-                              fontFamily: 'Gilroy',
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                              color: BlackColor,
-                            ),
-                            onChanged: (value) {},
-                            decoration: InputDecoration(
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide: BorderSide(
-                                  color: Colors.grey.shade300,
-                                ),
+                        SizedBox(height: 6),
+                        GetBuilder<SignUpController>(
+                          builder: (context) {
+                            return TextFormField(
+                              controller: signUpController.password,
+                              obscureText: signUpController.showPassword,
+                              cursorColor: BlackColor,
+                              autovalidateMode:
+                                  AutovalidateMode.onUserInteraction,
+                              style: TextStyle(
+                                fontFamily: 'Gilroy',
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                                color: BlackColor,
                               ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.grey.shade300,
+                              onChanged: (value) {},
+                              decoration: InputDecoration(
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                  borderSide: BorderSide(
+                                    color: Colors.grey.shade300,
+                                  ),
                                 ),
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                                borderSide: BorderSide(
-                                  color: Colors.grey.shade300,
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.grey.shade300,
+                                  ),
+                                  borderRadius: BorderRadius.circular(15),
                                 ),
-                              ),
-                              suffixIcon: InkWell(
-                                onTap: () {
-                                  signUpController.showOfPassword();
-                                },
-                                child: !signUpController.showPassword
-                                    ? Padding(
-                                        padding: const EdgeInsets.all(10),
-                                        child: Image.asset(
-                                          "assets/showpassowrd.png",
-                                          height: 25,
-                                          width: 25,
-                                          color: greytext,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                  borderSide: BorderSide(
+                                    color: Colors.grey.shade300,
+                                  ),
+                                ),
+                                suffixIcon: InkWell(
+                                  onTap: () {
+                                    signUpController.showOfPassword();
+                                  },
+                                  child: !signUpController.showPassword
+                                      ? Padding(
+                                          padding: const EdgeInsets.all(10),
+                                          child: Image.asset(
+                                            "assets/showpassowrd.png",
+                                            height: 25,
+                                            width: 25,
+                                            color: greytext,
+                                          ),
+                                        )
+                                      : Padding(
+                                          padding: const EdgeInsets.all(10),
+                                          child: Image.asset(
+                                            "assets/HidePassword.png",
+                                            height: 25,
+                                            width: 25,
+                                            color: greytext,
+                                          ),
                                         ),
-                                      )
-                                    : Padding(
-                                        padding: const EdgeInsets.all(10),
-                                        child: Image.asset(
-                                          "assets/HidePassword.png",
-                                          height: 25,
-                                          width: 25,
-                                          color: greytext,
-                                        ),
-                                      ),
-                              ),
-                              prefixIcon: Padding(
-                                padding: const EdgeInsets.all(10),
-                                child: Image.asset(
-                                  "assets/Unlock.png",
-                                  height: 25,
-                                  width: 25,
-                                  color: greytext,
                                 ),
+                                prefixIcon: Padding(
+                                  padding: const EdgeInsets.all(10),
+                                  child: Image.asset(
+                                    "assets/Unlock.png",
+                                    height: 25,
+                                    width: 25,
+                                    color: greytext,
+                                  ),
+                                ),
+                                labelText: "Password".tr,
+                                labelStyle: TextStyle(color: greytext),
                               ),
-                              labelText: "Password".tr,
-                              labelStyle: TextStyle(
-                                color: greytext,
-                              ),
-                            ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Please enter your password'.tr;
-                              }
-                              return null;
-                            },
-                          );
-                        }),
-                        SizedBox(
-                          height: 20,
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter your password'.tr;
+                                }
+                                return null;
+                              },
+                            );
+                          },
                         ),
+                        SizedBox(height: 20),
                         Padding(
                           padding: const EdgeInsets.only(left: 2),
                           child: Text(
@@ -444,9 +417,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: 6,
-                        ),
+                        SizedBox(height: 6),
                         TextFormField(
                           controller: signUpController.referralCode,
                           cursorColor: BlackColor,
@@ -477,67 +448,64 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               ),
                             ),
                             labelText: "Referral code (optional)".tr,
-                            labelStyle: TextStyle(
-                              color: greytext,
-                            ),
+                            labelStyle: TextStyle(color: greytext),
                           ),
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        GetBuilder<SignUpController>(builder: (context) {
-                          return Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Transform.scale(
-                                scale: 1,
-                                child: Checkbox(
-                                  value: signUpController.chack,
-                                  side: const BorderSide(
-                                      color: Color(0xffC5CAD4)),
-                                  activeColor: blueColor,
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(5)),
-                                  onChanged: (newbool) async {
-                                    signUpController
-                                        .checkTermsAndCondition(newbool);
-                                    save('Remember', true);
-                                  },
+                        SizedBox(height: 10),
+                        GetBuilder<SignUpController>(
+                          builder: (context) {
+                            return Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(width: 10),
+                                Transform.scale(
+                                  scale: 1,
+                                  child: Checkbox(
+                                    value: signUpController.chack,
+                                    side: const BorderSide(
+                                      color: Color(0xffC5CAD4),
+                                    ),
+                                    activeColor: blueColor,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                    onChanged: (newbool) async {
+                                      signUpController.checkTermsAndCondition(
+                                        newbool,
+                                      );
+                                      save('Remember', true);
+                                    },
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                width: 8,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "By creating an account,you agree to our"
-                                        .tr,
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: greytext,
-                                      fontFamily: FontFamily.gilroyMedium,
-                                      overflow: TextOverflow.ellipsis,
+                                SizedBox(width: 8),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "By creating an account,you agree to our"
+                                          .tr,
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: greytext,
+                                        fontFamily: FontFamily.gilroyMedium,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    "Terms and Condition".tr,
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: gradient.defoultColor,
-                                      fontFamily: FontFamily.gilroyBold,
-                                      overflow: TextOverflow.ellipsis,
+                                    Text(
+                                      "Terms and Condition".tr,
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: gradient.defoultColor,
+                                        fontFamily: FontFamily.gilroyBold,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          );
-                        }),
+                                  ],
+                                ),
+                              ],
+                            );
+                          },
+                        ),
                         GestButton(
                           Width: Get.size.width,
                           height: 50,
@@ -550,117 +518,136 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
+                          // onclick: () {
+                          //   if ((_formKey.currentState?.validate() ?? false) &&
+                          //       (signUpController.chack == true)) {
+                          //     signUpController.checkMobileNumber(cuntryCode).then((value) {
+                          //       var decodeValue = jsonDecode(value);
+                          //       if(decodeValue["Result"] == "true"){
+                          //         smsTypeController.smsTypeApi().then((smsType) {
+                          //           if(smsType["Result"] == "true"){
+                          //             print("cscvdxvdcvfcbgbgn");
+                          //             if(smsType["otp_auth"] == "No"){
+                          //               signUpController.setUserApiData(cuntryCode);
+                          //             }else {
+                          //               if (smsType["SMS_TYPE"] == "Firebase") {
+                          //                 print("cscvdxvdcvfcbgbgn");
+                          //                 sendOTP(signUpController.number.text, cuntryCode);
+                          //                 // Get.to(() =>
+                          //                 //     VerifyAccount(
+                          //                 //       ccode: Country,
+                          //                 //       number: Mobile.text,
+                          //                 //       Email: Email.text,
+                          //                 //       FullName: FullName.text,
+                          //                 //       Password: Password.text,
+                          //                 //       img: base64Image,
+                          //                 //       Signup: "Signup",
+                          //                 //       msgType: smsType["SMS_TYPE"],
+                          //                 //     ));
+                          //                 Get.to(() =>
+                          //                     OtpScreen(
+                          //                       ccode: cuntryCode,
+                          //                       number: signUpController.number.text,
+                          //                       Email: signUpController.email.text,
+                          //                       FullName: signUpController.name.text,
+                          //                       Password: signUpController.password.text,
+                          //                       Signup: "signUpScreen",
+                          //                       otpCode: "",
+                          //                       msgType: smsType["SMS_TYPE"],
+
+                          //                     ));
+                          //               } else if (smsType["SMS_TYPE"] == "Msg91") {
+                          //                 //  msg_otp;
+                          //                 print("cscvdxvdcvfcbgbgn");
+                          //                 msgOtpController.msgOtpApi(mobile: "$cuntryCode${signUpController.number.text}").then((msgOtp) {
+                          //                   print("************* ${msgOtp}");
+                          //                   if (msgOtp["Result"] == "true") {
+                          //                     Get.to(() =>
+                          //                         OtpScreen(
+                          //                           ccode: cuntryCode,
+                          //                           number: signUpController.number.text,
+                          //                           Email: signUpController.email.text,
+                          //                           FullName: signUpController.name.text,
+                          //                           Password: signUpController.password.text,
+                          //                           Signup: "signUpScreen",
+                          //                           otpCode: msgOtp["otp"].toString(),
+                          //                           msgType: smsType["SMS_TYPE"],
+
+                          //                         ));
+                          //                     print("++++++++msgOtp+++++++++++ ${msgOtp["otp"]}");
+                          //                   } else {
+                          //                     showToastMessage(
+                          //                         "Invalid mobile number");
+                          //                   }
+                          //                 },);
+                          //               } else if (smsType["SMS_TYPE"] == "Twilio") {
+                          //                 print("cscvdxvdcvfcbgbgn");
+                          //                 twilioOtpController.twilioOtpApi(
+                          //                     mobile: "$cuntryCode${signUpController.number.text}").then((twilioOtp) {
+                          //                   print("---------- $twilioOtp");
+                          //                   if (twilioOtp["Result"] == "true") {
+                          //                     Get.to(() =>
+                          //                         OtpScreen(
+                          //                           ccode: cuntryCode,
+                          //                           number: signUpController.number.text,
+                          //                           Email: signUpController.email.text,
+                          //                           FullName: signUpController.name.text,
+                          //                           Password: signUpController.password.text,
+                          //                           Signup: "signUpScreen",
+                          //                           otpCode: twilioOtp["otp"].toString(),
+                          //                           msgType: smsType["SMS_TYPE"],
+                          //                         ));
+                          //                     print(
+                          //                         "++++++++twilioOtp+++++++++++ ${twilioOtp["otp"]}");
+                          //                   } else {
+                          //                     showToastMessage(
+                          //                         "Invalid mobile number".tr);
+                          //                   }
+                          //                 },);
+                          //               } else {
+                          //                 showToastMessage(
+                          //                     "Invalid mobile number".tr);
+                          //               }
+                          //             }
+                          //           }else{
+                          //             showToastMessage("Invalid mobile number".tr);
+                          //           }
+                          //         },
+                          //         );
+                          //       }else{
+                          //        showToastMessage(decodeValue["ResponseMsg"]);
+                          //       }
+
+                          //     },);
+                          //   } else {
+                          //     if (signUpController.chack == false) {
+                          //       showToastMessage("Please select Terms and Condition".tr);
+                          //     }
+                          //   }
+                          // },
                           onclick: () {
                             if ((_formKey.currentState?.validate() ?? false) &&
                                 (signUpController.chack == true)) {
-                              signUpController.checkMobileNumber(cuntryCode).then((value) {
-                                var decodeValue = jsonDecode(value);
-                                if(decodeValue["Result"] == "true"){
-                                  smsTypeController.smsTypeApi().then((smsType) {
-                                    if(smsType["Result"] == "true"){
-                                      print("cscvdxvdcvfcbgbgn");
-                                      if(smsType["otp_auth"] == "No"){
-                                        signUpController.setUserApiData(cuntryCode);
-                                      }else {
-                                        if (smsType["SMS_TYPE"] == "Firebase") {
-                                          print("cscvdxvdcvfcbgbgn");
-                                          sendOTP(signUpController.number.text, cuntryCode);
-                                          // Get.to(() =>
-                                          //     VerifyAccount(
-                                          //       ccode: Country,
-                                          //       number: Mobile.text,
-                                          //       Email: Email.text,
-                                          //       FullName: FullName.text,
-                                          //       Password: Password.text,
-                                          //       img: base64Image,
-                                          //       Signup: "Signup",
-                                          //       msgType: smsType["SMS_TYPE"],
-                                          //     ));
-                                          Get.to(() =>
-                                              OtpScreen(
-                                                ccode: cuntryCode,
-                                                number: signUpController.number.text,
-                                                Email: signUpController.email.text,
-                                                FullName: signUpController.name.text,
-                                                Password: signUpController.password.text,
-                                                Signup: "signUpScreen",
-                                                otpCode: "",
-                                                msgType: smsType["SMS_TYPE"],
+                              signUpController
+                                  .checkMobileNumber(cuntryCode)
+                                  .then((value) {
+                                    var decodeValue = jsonDecode(value);
 
-                                              ));
-                                        } else if (smsType["SMS_TYPE"] == "Msg91") {
-                                          //  msg_otp;
-                                          print("cscvdxvdcvfcbgbgn");
-                                          msgOtpController.msgOtpApi(mobile: "$cuntryCode${signUpController.number.text}").then((msgOtp) {
-                                            print("************* ${msgOtp}");
-                                            if (msgOtp["Result"] == "true") {
-                                              Get.to(() =>
-                                                  OtpScreen(
-                                                    ccode: cuntryCode,
-                                                    number: signUpController.number.text,
-                                                    Email: signUpController.email.text,
-                                                    FullName: signUpController.name.text,
-                                                    Password: signUpController.password.text,
-                                                    Signup: "signUpScreen",
-                                                    otpCode: msgOtp["otp"].toString(),
-                                                    msgType: smsType["SMS_TYPE"],
-
-                                                  ));
-                                              print("++++++++msgOtp+++++++++++ ${msgOtp["otp"]}");
-                                            } else {
-                                              showToastMessage(
-                                                  "Invalid mobile number");
-                                            }
-                                          },);
-                                        } else if (smsType["SMS_TYPE"] == "Twilio") {
-                                          print("cscvdxvdcvfcbgbgn");
-                                          twilioOtpController.twilioOtpApi(
-                                              mobile: "$cuntryCode${signUpController.number.text}").then((twilioOtp) {
-                                            print("---------- $twilioOtp");
-                                            if (twilioOtp["Result"] == "true") {
-                                              Get.to(() =>
-                                                  OtpScreen(
-                                                    ccode: cuntryCode,
-                                                    number: signUpController.number.text,
-                                                    Email: signUpController.email.text,
-                                                    FullName: signUpController.name.text,
-                                                    Password: signUpController.password.text,
-                                                    Signup: "signUpScreen",
-                                                    otpCode: twilioOtp["otp"].toString(),
-                                                    msgType: smsType["SMS_TYPE"],
-                                                  ));
-                                              print(
-                                                  "++++++++twilioOtp+++++++++++ ${twilioOtp["otp"]}");
-                                            } else {
-                                              showToastMessage(
-                                                  "Invalid mobile number".tr);
-                                            }
-                                          },);
-                                        } else {
-                                          showToastMessage(
-                                              "Invalid mobile number".tr);
-                                        }
-                                      }
-                                    }else{
-                                      showToastMessage("Invalid mobile number".tr);
+                                    if (decodeValue["Result"] == "true") {
+                                      /// NO SMS / NO OTP → Direct Signup
+                                      signUpController.setUserApiData(
+                                        cuntryCode,
+                                      );
+                                    } else {
+                                      showToastMessage(
+                                        decodeValue["ResponseMsg"],
+                                      );
                                     }
-                                  },
-                                  );
-                                }else{
-                                 showToastMessage(decodeValue["ResponseMsg"]);
-                                }
-
-                              },);
-                            } else {
-                              if (signUpController.chack == false) {
-                                showToastMessage("Please select Terms and Condition".tr);
-                              }
+                                  });
                             }
                           },
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
+                        SizedBox(height: 10),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 45),
                           child: Row(

@@ -3,7 +3,9 @@
 class Config {
 
   static const String oneSignel = "*****************";
-  static const String baseUrl = 'https://milkyway.cscodetech.cloud/';
+  // static const String baseUrl = 'https://milkyway.cscodetech.cloud/';
+  static const String baseUrl = 'https://admin.kampilya.com/';
+
   static const String imageurl = baseUrl;
 
   static const String path = baseUrl + '/rider_api/';

@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_interpolation_to_compose_strings, constant_identifier_names
 
 class AppUrl {
-  static const String baseUrl = 'https://milkyway.cscodetech.cloud/';
+  // static const String baseUrl = 'https://milkyway.cscodetech.cloud/';
+  static const String baseUrl = 'https://admin.kampilya.com/';
   static const String imageurl = baseUrl;
   static const String path = baseUrl + '/store_api/';
   static const oneSignel = "**************************";

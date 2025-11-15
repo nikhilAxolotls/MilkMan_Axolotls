@@ -37,7 +37,8 @@ class _onbordingState extends State<onbording> {
 
   Future<Position> locateUser() async {
     return Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high);
+      desiredAccuracy: LocationAccuracy.high,
+    );
   }
 
   getCurrentLatAndLong() async {
@@ -47,10 +48,13 @@ class _onbordingState extends State<onbording> {
     if (permission == LocationPermission.denied) {}
     var currentLocation = await locateUser();
     List<Placemark> addresses = await placemarkFromCoordinates(
-        currentLocation.latitude, currentLocation.longitude);
+      currentLocation.latitude,
+      currentLocation.longitude,
+    );
     await placemarkFromCoordinates(
-            currentLocation.latitude, currentLocation.longitude)
-        .then((List<Placemark> placemarks) {
+      currentLocation.latitude,
+      currentLocation.longitude,
+    ).then((List<Placemark> placemarks) {
       Placemark place = placemarks[0];
       address =
           '${placemarks.first.name!.isNotEmpty ? placemarks.first.name! + ', ' : ''}${placemarks.first.thoroughfare!.isNotEmpty ? placemarks.first.thoroughfare! + ', ' : ''}${placemarks.first.subLocality!.isNotEmpty ? placemarks.first.subLocality! + ', ' : ''}${placemarks.first.locality!.isNotEmpty ? placemarks.first.locality! + ', ' : ''}${placemarks.first.subAdministrativeArea!.isNotEmpty ? placemarks.first.subAdministrativeArea! + ', ' : ''}${placemarks.first.postalCode!.isNotEmpty ? placemarks.first.postalCode! + ', ' : ''}${placemarks.first.administrativeArea!.isNotEmpty ? placemarks.first.administrativeArea : ''}';
@@ -68,23 +72,17 @@ class _onbordingState extends State<onbording> {
       () => getData.read('Firstuser') != true
           ? Navigator.pushReplacement(
               context,
-              MaterialPageRoute(
-                builder: (context) => BoardingPage(),
-              ),
+              MaterialPageRoute(builder: (context) => BoardingPage()),
             )
           : getData.read('Remember') != true
-              ? Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => LoginScreen(),
-                  ),
-                )
-              : Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MainBottomBarScreen(),
-                  ),
-                ),
+          ? Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => LoginScreen()),
+            )
+          : Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => MainBottomBarScreen()),
+            ),
     );
   }
 
@@ -105,11 +103,18 @@ class _onbordingState extends State<onbording> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/SplashScreen.png"), fit: BoxFit.fill),
+            image: AssetImage("assets/SplashScreen.png"),
+            fit: BoxFit.fill,
+          ),
           gradient: gradient.btnGradient,
         ),
+        padding: EdgeInsets.only(top: 50),
         child: Center(
-          child: Image.asset("assets/SpleshLogo.png", height: 120, width: 100),
+          child: Image.asset(
+            "assets/newSplashLogo.png",
+            height: 200,
+            width: 200,
+          ),
         ),
       ),
     );
@@ -226,9 +231,7 @@ class _BoardingScreenState extends State<BoardingPage> {
       row.children.add(_buildPageIndicatorItem(i));
       if (i != _slides.length - 1)
         // ignore: curly_braces_in_flow_control_structures
-        row.children.add(const SizedBox(
-          width: 10,
-        ));
+        row.children.add(const SizedBox(width: 10));
     }
     return row;
   }
@@ -238,10 +241,11 @@ class _BoardingScreenState extends State<BoardingPage> {
       width: index == _currentPage ? 12 : 8,
       height: index == _currentPage ? 12 : 8,
       decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: index == _currentPage
-              ? gradient.defoultColor
-              : gradient.defoultColor.withOpacity(0.5)),
+        shape: BoxShape.circle,
+        color: index == _currentPage
+            ? gradient.defoultColor
+            : gradient.defoultColor.withOpacity(0.5),
+      ),
     );
   }
 
@@ -255,15 +259,16 @@ class _BoardingScreenState extends State<BoardingPage> {
             _currentPage == 0
                 ? "Milk made modern!".tr
                 : _currentPage == 1
-                    ? "Never miss a delivery again!".tr
-                    : _currentPage == 2
-                        ? "Milk at your fingertips!".tr
-                        : "",
+                ? "Never miss a delivery again!".tr
+                : _currentPage == 2
+                ? "Milk at your fingertips!".tr
+                : "",
             textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 21,
-                fontFamily: "Gilroy Bold",
-                color: BlackColor), //heding Text
+              fontSize: 21,
+              fontFamily: "Gilroy Bold",
+              color: BlackColor,
+            ), //heding Text
           ),
         ),
         SizedBox(height: Get.height * 0.02),
@@ -272,19 +277,20 @@ class _BoardingScreenState extends State<BoardingPage> {
           child: Text(
             _currentPage == 0
                 ? "Our app combines the convenience of technology with the tradition of the milkman"
-                    .tr
+                      .tr
                 : _currentPage == 1
-                    ? "With our app, you'll receive real-time notifications about your milk deliveries"
-                        .tr
-                    : _currentPage == 2
-                        ? "order fresh milk and dairy products for delivery straight to your doorstep"
-                            .tr
-                        : "",
+                ? "With our app, you'll receive real-time notifications about your milk deliveries"
+                      .tr
+                : _currentPage == 2
+                ? "order fresh milk and dairy products for delivery straight to your doorstep"
+                      .tr
+                : "",
             textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 13,
-                color: greycolor,
-                fontFamily: "Gilroy Medium"), //subtext
+              fontSize: 13,
+              color: greycolor,
+              fontFamily: "Gilroy Medium",
+            ), //subtext
           ),
         ),
       ],
@@ -354,9 +360,7 @@ class _BoardingScreenState extends State<BoardingPage> {
               ),
               child: Column(
                 children: <Widget>[
-                  SizedBox(
-                    height: Get.size.height * 0.03,
-                  ),
+                  SizedBox(height: Get.size.height * 0.03),
                   _buildPageIndicator(),
                   sliderText(),
                   Spacer(),
@@ -379,9 +383,10 @@ class _BoardingScreenState extends State<BoardingPage> {
                                 child: Text(
                                   provider.getstart,
                                   style: TextStyle(
-                                      fontSize: 16,
-                                      color: WhiteColor,
-                                      fontFamily: "Gilroy Bold"),
+                                    fontSize: 16,
+                                    color: WhiteColor,
+                                    fontFamily: "Gilroy Bold",
+                                  ),
                                 ),
                               ),
                             ),
@@ -392,22 +397,25 @@ class _BoardingScreenState extends State<BoardingPage> {
                           child: GestureDetector(
                             onTap: () {
                               _pageController.nextPage(
-                                  duration: const Duration(microseconds: 300),
-                                  curve: Curves.easeIn);
+                                duration: const Duration(microseconds: 300),
+                                curve: Curves.easeIn,
+                              );
                             },
                             child: Container(
                               decoration: BoxDecoration(
-                                  gradient: gradient.btnGradient,
-                                  borderRadius: BorderRadius.circular(15)),
+                                gradient: gradient.btnGradient,
+                                borderRadius: BorderRadius.circular(15),
+                              ),
                               height: 50,
                               width: double.infinity,
                               child: Center(
                                 child: Text(
                                   provider.next,
                                   style: TextStyle(
-                                      fontSize: 16,
-                                      color: WhiteColor,
-                                      fontFamily: "Gilroy Bold"),
+                                    fontSize: 16,
+                                    color: WhiteColor,
+                                    fontFamily: "Gilroy Bold",
+                                  ),
                                 ),
                               ),
                             ),
@@ -416,11 +424,11 @@ class _BoardingScreenState extends State<BoardingPage> {
                   SizedBox(
                     height: Get.height * 0.012, //indicator set screen
                   ),
-                  const SizedBox(height: 20)
+                  const SizedBox(height: 20),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -433,5 +441,4 @@ class Slide {
   String subtext;
 
   Slide(this.image, this.heading, this.subtext);
-
 }

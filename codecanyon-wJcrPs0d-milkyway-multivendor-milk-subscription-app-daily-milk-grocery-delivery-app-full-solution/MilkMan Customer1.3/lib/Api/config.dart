@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_interpolation_to_compose_strings
 
 class Config {
-  static const String baseurl = 'https://milkyway.cscodetech.cloud/';
+  static const String baseurl = 'https://admin.kampilya.com/';
+  //static const String baseurl = 'https://milkyway.cscodetech.cloud/';
+// https://admin.kampilya.com/user_api/sms_type.php
   static const String path = baseurl + 'user_api/';
 
   static const String imageUrl = baseurl ;
